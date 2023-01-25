@@ -5,6 +5,7 @@ import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
+
 function App() {
   const[mode, setMode] = useState('light');
   const[alert, setAlert] = useState(null);
@@ -19,8 +20,6 @@ function App() {
     }, 1500);
   }
 
-
-
   const toggleMode = ()=>{
     if(mode === 'light'){
       setMode('dark')
@@ -34,9 +33,28 @@ function App() {
     }
   }
 
+  const toggleModeRed = ()=>{
+    setMode('dark')
+    document.body.style.backgroundColor = '#dc3545'
+    showAlert("Red Theme has been enabled", "success")
+  }
+  
+  const toggleModeYel = ()=>{
+    setMode('dark')
+    document.body.style.backgroundColor = '#ffc107'
+    showAlert("Yellow Theme has been enabled", "success")
+  }
+
+  const toggleModeGreen = ()=>{
+    setMode('dark')
+    document.body.style.backgroundColor = '#198754'
+    showAlert("Green Theme has been enabled", "success")
+  }
+  
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} toggleModeRed={toggleModeRed}
+      toggleModeYel={toggleModeYel} toggleModeGreen={toggleModeGreen}/>
       <Alert alert={alert}/>
       <div className="container my-3">
         <TextForm  showAlert={showAlert} heading="Enter Text To Analyze Below" mode={mode}/>

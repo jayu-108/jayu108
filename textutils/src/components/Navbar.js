@@ -23,6 +23,13 @@ export default function Navbar(props) {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-primary" type="submit">Search</button>
           </form> */}
+
+          <div className="btn-group mx-2" role="group" aria-label="Basic mixed styles example">
+            <button type="button" className="btn btn-danger" onClick={props.toggleModeRed}></button>
+            <button type="button" className="btn btn-warning" onClick={props.toggleModeYel}></button>
+            <button type="button" className="btn btn-success" onClick={props.toggleModeGreen}></button>
+          </div>
+
           <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>
             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
